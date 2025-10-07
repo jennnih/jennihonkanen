@@ -8,6 +8,26 @@ html,body {
     background-color: #FBF2D7;
 }
 
+.pill-nav a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.pill-nav a:hover {
+  background-color: #FBF2D7;
+  color: black;
+}
+
+.pill-nav a.active {
+  background-color: lightpink;
+  color: white;
+}
+
 .container {
     display: flex;
     align-items: flex-start;
@@ -18,7 +38,7 @@ html,body {
 .left-column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 300px;
   position: fixed;
   top: 0;
@@ -26,6 +46,20 @@ html,body {
   height: 100vh;
   background-color: #FBF2D7;
   padding-top: 20px;
+  padding-left: 30px;
+}
+
+.left-column a {
+  text-decoration: none;      
+  color: black;             
+  font-size: 20px;
+  margin: 6px 0;              
+  text-align: left;           
+}
+
+.left-column a:hover {
+    background-color: lightpink;
+    border-radius: 5px;
 }
 
 .center-column {
@@ -34,19 +68,15 @@ html,body {
      max-width: 900px;
      margin-left: 340px;
      padding: 20px;
-
 }
 
 .logo {
-    padding-top: 20px;
-    padding-left: 20px;
     width: 280px;
     z-index: 1000;
 }
 
 .photo {
     width: 280px;
-    padding-left: 20px;
 }
 
 .header h1 {
@@ -61,14 +91,15 @@ h2 {
 
 .content p {
     line-height: 1.6;
+    font-size: 20px;
 }
 
 .image {
     width: 100%;
     max-width: 900px;
-    margin: 20px;
+    margin: 8px auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 0px;
 }
 
 footer {
@@ -86,3 +117,68 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (max-width: 1024px) {
+  .left-column {
+    width: 220px;
+    padding-left: 15px;
+  }
+
+  .center-column {
+    margin-left: 250px;
+    max-width: calc(100% - 270px);
+  }
+
+  .image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .left-column a {
+    margin: 4px 8px;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 200px;
+    padding: 0;
+  }
+
+  .photo {
+    display: none; 
+  }
+
+  .center-column {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .pill-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  footer {
+    width: 100%;
+    margin-left: 0;
+  }
+}
